@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amanuensis"
+version = "0.2.0"
+description = "Turn photographs and scans of historical documents into data with Gemini"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Marcelo Pi-Suñer", email = "marce.pisuner@gmail.com" }]
+keywords = ["historical documents", "transcription", "gemini", "digital humanities", "data extraction"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+# Versions are the ones the offline suite was run with; google-genai >= 2.31
+# is needed for per-image media resolution, an injected httpx client and the
+# flex service tier.
+dependencies = [
+    "google-genai>=2.31",
+    "httpx>=0.27",
+    "numpy>=1.26",
+    "openpyxl>=3.1",
+    "pandas>=2.2",
+    "pillow>=10.0",
+    "pypdfium2>=4.25",
+]
+
+[project.urls]
+Homepage = "https://github.com/marcelopisuner/amanuensis-python"
+Repository = "https://github.com/marcelopisuner/amanuensis-python"
+Issues = "https://github.com/marcelopisuner/amanuensis-python/issues"
+
+[project.optional-dependencies]
+# HEIC photos (iPhone) without macOS's own converter
+heic = ["pillow-heif>=0.16"]
+# faster edit distances in score() for long free-text pages
+fast = ["rapidfuzz>=3.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+amanuensis = ["data/example/*", "py.typed"]

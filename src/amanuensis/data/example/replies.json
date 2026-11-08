@@ -1,0 +1,365 @@
+{
+  "padro1930_p001.jpg": {
+    "data": {
+      "full": "1",
+      "records": [
+        {
+          "num": 1,
+          "cognoms": "Puig Ferrer",
+          "nom": "Josep",
+          "edat": 52,
+          "sexe": "H",
+          "estat_civil": "C",
+          "professio": "pagès",
+          "sap_llegir": true
+        },
+        {
+          "num": 2,
+          "cognoms": "Soler Vidal",
+          "nom": "Maria",
+          "edat": 47,
+          "sexe": "D",
+          "estat_civil": "C",
+          "professio": "feines de casa",
+          "sap_llegir": false
+        },
+        {
+          "num": 3,
+          "cognoms": "Puig Soler",
+          "nom": "Joan",
+          "edat": 21,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "pagès",
+          "sap_llegir": true
+        },
+        {
+          "num": 4,
+          "cognoms": "id.",
+          "nom": "Montserrat",
+          "edat": 17,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": "teixidora",
+          "sap_llegir": true
+        },
+        {
+          "num": 5,
+          "cognoms": "id.",
+          "nom": "Marcel·lí",
+          "edat": 9,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "estudiant",
+          "sap_llegir": true
+        },
+        {
+          "num": 6,
+          "cognoms": "Fàbregas Solé",
+          "nom": "Ramon",
+          "edat": 36,
+          "sexe": "H",
+          "estat_civil": "C",
+          "professio": "fuster",
+          "sap_llegir": true
+        },
+        {
+          "num": 7,
+          "cognoms": "Roca Pujol",
+          "nom": "Rosalia",
+          "edat": 35,
+          "sexe": "D",
+          "estat_civil": "C",
+          "professio": "feines de casa",
+          "sap_llegir": true
+        },
+        {
+          "num": 8,
+          "cognoms": "Fàbregas Roca",
+          "nom": "Pere",
+          "edat": 12,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "estudiant",
+          "sap_llegir": true
+        },
+        {
+          "num": 9,
+          "cognoms": "id.",
+          "nom": "Pilar",
+          "edat": 6,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": null,
+          "sap_llegir": false
+        },
+        {
+          "num": 10,
+          "cognoms": "Ul·ldemolins Casals",
+          "nom": "Jaume",
+          "edat": 64,
+          "sexe": "H",
+          "estat_civil": "V",
+          "professio": "jornaler",
+          "sap_llegir": false
+        },
+        {
+          "num": 11,
+          "cognoms": "Ul·ldemolins Mas",
+          "nom": "Avel·lí",
+          "edat": 29,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "id.",
+          "sap_llegir": true
+        },
+        {
+          "num": 12,
+          "cognoms": "Bertran Serra",
+          "nom": "Francesc",
+          "edat": 44,
+          "sexe": "H",
+          "estat_civil": "C",
+          "professio": "ferrer",
+          "sap_llegir": true
+        },
+        {
+          "num": 13,
+          "cognoms": "Grau Bosch",
+          "nom": "Dolors",
+          "edat": 41,
+          "sexe": "D",
+          "estat_civil": "C",
+          "professio": "feines de casa",
+          "sap_llegir": true
+        },
+        {
+          "num": 14,
+          "cognoms": "Bertran Grau",
+          "nom": "Antonia",
+          "edat": 15,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": "minyona",
+          "sap_llegir": true
+        }
+      ]
+    },
+    "tokens": {
+      "prompt": 3441,
+      "output": 524
+    }
+  },
+  "padro1930_p002.jpg": {
+    "data": {
+      "full": "2",
+      "records": [
+        {
+          "num": 15,
+          "cognoms": "Bertran Grau",
+          "nom": "Lluís",
+          "edat": 11,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "estudiant",
+          "sap_llegir": true
+        },
+        {
+          "num": 16,
+          "cognoms": "Vilaró Riera",
+          "nom": "Salvador",
+          "edat": 58,
+          "sexe": "H",
+          "estat_civil": "C",
+          "professio": "moliner",
+          "sap_llegir": true
+        },
+        {
+          "num": 17,
+          "cognoms": "Camps Font",
+          "nom": "Eulàlia",
+          "edat": 55,
+          "sexe": "D",
+          "estat_civil": "C",
+          "professio": "feines de casa",
+          "sap_llegir": false
+        },
+        {
+          "num": 18,
+          "cognoms": "Vilaró Camps",
+          "nom": "Narcís",
+          "edat": 26,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "moliner",
+          "sap_llegir": true
+        },
+        {
+          "num": 19,
+          "cognoms": "id.",
+          "nom": "Teresa",
+          "edat": 23,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": "sastressa",
+          "sap_llegir": true
+        },
+        {
+          "num": 21,
+          "cognoms": "Font Rovira",
+          "nom": "Magdalena",
+          "edat": 81,
+          "sexe": "D",
+          "estat_civil": "V",
+          "professio": null,
+          "sap_llegir": false
+        },
+        {
+          "num": 22,
+          "cognoms": "Sabaté Miró",
+          "nom": "Isidre",
+          "edat": 33,
+          "sexe": "H",
+          "estat_civil": "C",
+          "professio": "paleta",
+          "sap_llegir": true
+        },
+        {
+          "num": 23,
+          "cognoms": "Pla Ventura",
+          "nom": "Mercè",
+          "edat": 30,
+          "sexe": "D",
+          "estat_civil": "C",
+          "professio": "feines de casa",
+          "sap_llegir": true
+        },
+        {
+          "num": 24,
+          "cognoms": "Sabaté Pla",
+          "nom": "Jordi",
+          "edat": 7,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "estudiant",
+          "sap_llegir": true
+        },
+        {
+          "num": 25,
+          "cognoms": "id.",
+          "nom": "Núria",
+          "edat": 4,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": null,
+          "sap_llegir": false
+        },
+        {
+          "num": 26,
+          "cognoms": "id.",
+          "nom": "Marcel·la",
+          "edat": 1,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": null,
+          "sap_llegir": false
+        },
+        {
+          "num": 27,
+          "cognoms": "Rovira Fusté",
+          "nom": "Climent",
+          "edat": 49,
+          "sexe": "H",
+          "estat_civil": "V",
+          "professio": "rajoler",
+          "sap_llegir": true
+        },
+        {
+          "num": 28,
+          "cognoms": "Rovira Sala",
+          "nom": "Carme",
+          "edat": 20,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": "teixidora",
+          "sap_llegir": true
+        }
+      ]
+    },
+    "tokens": {
+      "prompt": 3441,
+      "output": 484
+    }
+  },
+  "padro1930_p003.jpg": {
+    "data": {
+      "full": "3",
+      "records": [
+        {
+          "num": 29,
+          "cognoms": "Casals Bosch",
+          "nom": "Josep",
+          "edat": 72,
+          "sexe": "H",
+          "estat_civil": "V",
+          "professio": "pagès",
+          "sap_llegir": false
+        },
+        {
+          "num": 30,
+          "cognoms": "Mas Casals",
+          "nom": "Rafel",
+          "edat": 45,
+          "sexe": "H",
+          "estat_civil": "C",
+          "professio": "traginer",
+          "sap_llegir": true
+        },
+        {
+          "num": 31,
+          "cognoms": "Riera Puig",
+          "nom": "Àngela",
+          "edat": 43,
+          "sexe": "D",
+          "estat_civil": "V",
+          "professio": "feines de casa",
+          "sap_llegir": true
+        },
+        {
+          "num": 32,
+          "cognoms": "Mas Riera",
+          "nom": "Ernest",
+          "edat": 16,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "aprenent",
+          "sap_llegir": true
+        },
+        {
+          "num": 33,
+          "cognoms": "Mas Riera",
+          "nom": "Josefa",
+          "edat": 13,
+          "sexe": "D",
+          "estat_civil": "S",
+          "professio": "estudiant",
+          "sap_llegir": true
+        },
+        {
+          "num": 34,
+          "cognoms": "id.",
+          "nom": "Ignasi",
+          "edat": 10,
+          "sexe": "H",
+          "estat_civil": "S",
+          "professio": "id.",
+          "sap_llegir": true
+        }
+      ]
+    },
+    "tokens": {
+      "prompt": 3441,
+      "output": 226
+    }
+  }
+}

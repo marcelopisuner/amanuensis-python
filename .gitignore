@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.DS_Store
+.claude/
+
+# working notes, kept out of the public repository
+NOTES.md
+REVIEW.md

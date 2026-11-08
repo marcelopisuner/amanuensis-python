@@ -1,0 +1,10 @@
+﻿variable,type,level,description,values
+full,text,page,"The sheet number printed at the top right after the word 'Full', exactly as printed (e.g. 'Full 2' -> '2'). Read it, never compute it from the order of the pages. Empty if there is none.",
+num,integer,row,"The row number printed in the first column ('Núm.'), as printed (e.g. '17' -> 17). The numbering runs on from one sheet to the next; copy it, never renumber the rows or compute a number.",
+cognoms,text,row,"The surnames in the column 'Cognoms', exactly as written, with accents and the middle dot of l·l (e.g. 'Ul·ldemolins Casals'). A ditto mark is copied as written (e.g. 'id.' -> 'id.'); never replace it with the surname above.",
+nom,text,row,"The first name in the column 'Nom', exactly as written, keeping accents and old spellings (e.g. 'Joseph' -> 'Joseph', never 'Josep').",
+edat,integer,row,"The age in years in the column 'Edat', as written (e.g. '38' -> 38). Copy it; never estimate or compute an age.",
+sexe,category,row,"The letter in the column 'Sexe': H (home, man) or D (dona, woman). Copy the letter; never infer it from the first name.",H; D
+estat_civil,category,row,"The letter in the column 'Estat civil': S (solter, single), C (casat, married) or V (vidu, widowed). Copy the letter; never infer it from the age or the household.",S; C; V
+professio,text,row,"The occupation in the column 'Professió', exactly as written (e.g. 'feines de casa', 'pagès'), ditto marks 'id.' included. Empty if the cell is blank; never fill in an occupation that is not written.",
+sap_llegir,yes/no,row,"The column 'Sap llegir' (can read): 'S' -> yes, 'N' -> no. Empty if the cell is blank; never infer it from the age or the occupation.",
