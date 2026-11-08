@@ -34,33 +34,26 @@ or [Anaconda](https://www.anaconda.com/download)) and a terminal: the
 Windows. Type this in the terminal and press Enter:
 
 ```bash
-pip install git+https://github.com/marcelopisuner/amanuensis-python
+pip install amanuensis
 ```
 
-The package is not on PyPI, so install it with this line, not with
-`pip install amanuensis`. If it does not work:
+If it does not work:
 
 - If the terminal says that `pip` is not found or not recognized, write
   `python3 -m pip` (Mac, Linux) or `py -m pip` (Windows) instead of `pip`,
   followed by the rest of the line.
-- If the error is about git (*Cannot find command 'git'*, or *xcrun: error* on
-  a Mac), install Git first: on Windows from
-  [git-scm.com](https://git-scm.com/downloads); on a Mac by typing
-  `xcode-select --install` in the Terminal and accepting. Then open a new
-  terminal and try again.
 
 In a Jupyter notebook you can also install it from a cell:
-`%pip install git+https://github.com/marcelopisuner/amanuensis-python`.
+`%pip install amanuensis`.
 
 Optional: `pip install pillow-heif` reads iPhone photos (HEIC) on Windows and
 Linux (a Mac reads them without it), and `pip install rapidfuzz` makes scoring
 long free-text pages faster.
 
-To update to the newest version later, uninstall it and install it again:
+To update to the newest version later:
 
 ```bash
-pip uninstall -y amanuensis
-pip install git+https://github.com/marcelopisuner/amanuensis-python
+pip install --upgrade amanuensis
 ```
 
 ## Try it now: the worked example (no key, no cost)
@@ -397,4 +390,4 @@ ran, what you expected, and the message you got. Never paste your key.
 
 ## License
 
-MIT, © 2026 Marcelo Pi-Suñer. See [LICENSE](LICENSE).
+MIT, © 2026 Marcelo Pi-Suñer. See [LICENSE](https://github.com/marcelopisuner/amanuensis-python/blob/main/LICENSE).
