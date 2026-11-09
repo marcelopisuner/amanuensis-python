@@ -1,11 +1,8 @@
 # amanuensis
 
-> [!WARNING]
-> **This is a beta version.** amanuensis is still in development and testing.
-> It has been tested and is believed to be safe to use, but it may still have
-> bugs, and details may change before the first stable release. Start with a
-> few pages, check the results, and please
-> [report anything that looks wrong](https://github.com/marcelopisuner/amanuensis-python/issues).
+[![tests](https://github.com/marcelopisuner/amanuensis-python/actions/workflows/tests.yml/badge.svg)](https://github.com/marcelopisuner/amanuensis-python/actions/workflows/tests.yml) [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+
+Beta: details may change before 1.0; please [report](https://github.com/marcelopisuner/amanuensis-python/issues) anything that looks wrong.
 
 **Turn photographs and scans of historical documents into data, from Python.**
 
