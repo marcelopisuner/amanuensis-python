@@ -320,7 +320,29 @@ LOCK_MAX_HOURS = 48
 _HELD: set = set()  # locks this Python process holds now
 
 
+def _alive_windows(pid: int) -> bool:
+    """Whether a process is running, asked of Windows (OpenProcess, then
+    GetExitCodeProcess): on Windows os.kill(pid, 0) ends the process."""
+    import ctypes
+
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.OpenProcess.argtypes = (ctypes.c_ulong, ctypes.c_int, ctypes.c_ulong)
+    kernel32.OpenProcess.restype = ctypes.c_void_p
+    kernel32.GetExitCodeProcess.argtypes = (ctypes.c_void_p, ctypes.POINTER(ctypes.c_ulong))
+    kernel32.CloseHandle.argtypes = (ctypes.c_void_p,)
+    handle = kernel32.OpenProcess(0x1000, False, pid)  # PROCESS_QUERY_LIMITED_INFORMATION
+    if not handle:
+        return ctypes.get_last_error() == 5  # ERROR_ACCESS_DENIED: it exists, owned by someone else
+    try:
+        code = ctypes.c_ulong()
+        return bool(kernel32.GetExitCodeProcess(handle, ctypes.byref(code))) and code.value == 259  # STILL_ACTIVE
+    finally:
+        kernel32.CloseHandle(handle)
+
+
 def _alive(pid: int) -> bool:
+    if os.name == "nt":
+        return _alive_windows(pid)
     try:
         os.kill(pid, 0)
     except ProcessLookupError:

@@ -418,6 +418,37 @@ class F33SmallerThings(Base):
         self.assertIn("Took over transcribe.lock", self.messages())
         self.assertFalse(os.path.exists("pages/extraction/transcribe.lock"))
 
+    def test_on_windows_the_process_holding_a_lock_is_asked_about_and_never_ended(self):
+        # Windows simulated: os.kill(pid, 0) would end the process there, so
+        # it must never be called; Windows is asked through kernel32 instead
+        import ctypes
+        import types
+        from unittest import mock
+        running, exited, other_user, gone = 4100, 4200, 4300, 4400
+        last_error = [0]
+        closed = []
+
+        def open_process(access, inherit, pid):
+            if pid in (running, exited):
+                return pid  # the handle
+            last_error[0] = 5 if pid == other_user else 87  # ERROR_ACCESS_DENIED, ERROR_INVALID_PARAMETER
+            return None
+
+        def get_exit_code_process(handle, code):
+            code._obj.value = 259 if handle == running else 0  # STILL_ACTIVE, or the code it ended with
+            return 1
+
+        kernel32 = types.SimpleNamespace(OpenProcess=open_process, GetExitCodeProcess=get_exit_code_process,
+                                         CloseHandle=lambda handle: closed.append(handle) or 1)
+        kill = mock.Mock(side_effect=AssertionError("os.kill() ends the process on Windows"))
+        with mock.patch.object(_store.os, "name", "nt"), mock.patch.object(_store.os, "kill", kill), \
+                mock.patch.object(ctypes, "WinDLL", lambda name, use_last_error=False: kernel32, create=True), \
+                mock.patch.object(ctypes, "get_last_error", lambda: last_error[0], create=True):
+            alive = {p: _store._alive(p) for p in (running, exited, other_user, gone)}
+        self.assertEqual(alive, {running: True, exited: False, other_user: True, gone: False})
+        kill.assert_not_called()
+        self.assertEqual(closed, [running, exited])
+
     def test_the_summary_announces_every_page_it_will_send_again(self):
         res, _ = self.tr(handler=lambda f, b, n, r: gemini_reply(no_candidates=True, block_reason="SAFETY") if f == "p001.jpg" else ok(f, b, n, r))
         self.assertIn("1 of them will be tried again", self.messages())
