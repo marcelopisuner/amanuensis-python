@@ -1,0 +1,41 @@
+# The offline test suite (stdlib unittest) against the source tree, with the
+# dependencies from `pip install .`. No Gemini key is set: the tests fake
+# Gemini at the HTTP level and never reach Google.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "30 5 * * 1"   # weekly, Mondays 05:30 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} (Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install the package
+        run: python -m pip install .
+
+      - name: Run the offline suite
+        env:
+          PYTHONPATH: src
+        run: python -m unittest discover -s tests -t .
