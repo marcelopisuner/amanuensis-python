@@ -265,6 +265,7 @@ class Replies(Case):
         return TR.record_from_reply(reply, raw if raw is not None else json.dumps(reply), pages.iloc[0], run)
 
     def test_a_good_reply_becomes_an_ok_record_with_tokens_price_and_cost(self):
+        self.freeze_price_date("2026-11-08")
         rec = self._record(gemini_reply(data=roster_data(), prompt=2500, output=200, thoughts=100))
         self.assertEqual(rec["status"], "ok")
         self.assertEqual(rec["tokens"]["billed_output"], 300)

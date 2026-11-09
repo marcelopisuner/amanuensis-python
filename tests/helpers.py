@@ -20,12 +20,13 @@ import sys
 import tempfile
 import unittest
 import warnings
+from datetime import date
 
 import httpx
 import pandas as pd
 
 import amanuensis as am
-from amanuensis import _gemini, _practice, _store
+from amanuensis import _gemini, _models, _practice, _store
 
 FAKE_KEY = "AIzaSyFAKE-test-key-0123456789abcdefgh"
 _EXAMPLE_DIR = []
@@ -104,6 +105,20 @@ class Case(unittest.TestCase):
             yield w
         texts = [str(x.message) for x in w if issubclass(x.category, am.AmanuensisWarning)]
         self.assertEqual(texts, [])
+
+    def freeze_price_date(self, day: str):
+        """Prices in this test are those of `day`: the model table announces
+        price changes on dates, so a test of today's prices would fail on the
+        day one takes effect."""
+        when = date.fromisoformat(day)
+
+        class Frozen(date):
+            @classmethod
+            def today(cls):
+                return when
+
+        self.addCleanup(setattr, _models, "date", _models.date)
+        _models.date = Frozen
 
 
 # ------- images ----------------------------------------------------------------------

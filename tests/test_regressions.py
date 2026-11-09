@@ -278,6 +278,7 @@ class F12BudgetFromTheFirstRound(Base):
         self.assertEqual(fake.calls, [])
 
     def test_the_first_round_is_one_page_and_later_rounds_fit_the_budget(self):
+        self.freeze_price_date("2026-11-08")
         make_jpegs("many", 8, prefix="m")
         res, fake = self.tr(fake=FakeGemini("many", ok), images="many", workers=8, budget=0.01)
         spent = float(res.pages["cost_usd"].sum())

@@ -237,6 +237,7 @@ class Budget(Base):
         B.check_batch_budget(est, 1.0)
 
     def test_batch_estimate_measures_earlier_pages_when_it_can(self):
+        self.freeze_price_date("2026-11-08")
         from amanuensis._transcribe import Run
         pages = am._images.as_images("pages")
         con = _store.contract(self.ins, self.cb)
