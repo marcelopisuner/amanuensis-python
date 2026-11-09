@@ -23,7 +23,7 @@ class Store(Case):
         self.assertEqual(os.path.basename(ST.record_file("d", "p001.jpg")), "p001.json")
         self.assertEqual(os.path.basename(ST.record_file("d", "Contract.JPG")), "_Contract.json")
         self.assertEqual(os.path.basename(ST.record_file("d", "_contract.jpg")), "__contract.json")
-        self.assertEqual(os.path.basename(ST.record_file("d", "a:b.jpg")), "a_b.json")
+        self.assertEqual(os.path.basename(ST.record_file("d", "a?b.jpg")), "a_b.json")
 
     def test_damaged_records_are_skipped_with_one_warning(self):
         os.makedirs("r")
