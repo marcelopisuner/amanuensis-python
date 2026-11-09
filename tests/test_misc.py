@@ -328,9 +328,10 @@ class Editor(Case):
 class HomeFolder(Case):
     def test_paths_starting_with_a_tilde_mean_the_home_folder(self):
         os.makedirs("home")
-        old = os.environ.get("HOME")
-        os.environ["HOME"] = os.path.realpath("home")
-        self.addCleanup(lambda: os.environ.__setitem__("HOME", old) if old is not None else os.environ.pop("HOME"))
+        for var in ("HOME", "USERPROFILE"):  # Windows reads ~ from USERPROFILE
+            old = os.environ.get(var)
+            os.environ[var] = os.path.realpath("home")
+            self.addCleanup(lambda var=var, old=old: os.environ.__setitem__(var, old) if old is not None else os.environ.pop(var))
         ex = quiet(am.example_project, "~/ex")
         self.assertTrue(os.path.exists("home/ex/padro1930.pdf"))
         pages = quiet(am.images, "~/ex/padro1930.pdf", save_to="~/ex/pages")
