@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "amanuensis"
-version = "0.2.0b1"
+version = "0.2.0b2"
 description = "Turn photographs and scans of historical documents into data with Gemini"
 readme = "README.md"
 requires-python = ">=3.10"
