@@ -186,7 +186,10 @@ def as_instructions(x) -> Instructions:
 
 
 def read_instructions_file(file) -> str:
-    if not os.path.exists(file):
+    # "instrucciones.md ": Windows drops a name's trailing spaces and dots, so
+    # there it exists and stopped on its extension below. No such name has an
+    # extension, so it is not found on every OS, with the hint about the space
+    if str(file).endswith((" ", ".")) or not os.path.exists(file):
         raise NotFoundError(f"Cannot find the instructions file {show_path(file)}.", *_path_hints(str(file)),
                             f"Check the spelling. Relative paths start from your working folder, {os.getcwd()}.",
                             "To give the instructions as text, use instructions(text='...').")
